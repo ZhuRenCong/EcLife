@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/community_bg">
+    <!--android:background="@mipmap/community_bg"-->
+
+
+    <weifen.com.widget.GradualScrollView
+        android:id="@+id/gradualScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:padding="16dp">
+                <!--头像-->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_community_icon"
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:src="@mipmap/person_iocn"
+                    android:layout_margin="10dp"
+                    android:scaleType="centerCrop"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="25dp">
+
+                    <!--社区的名字-->
+                    <TextView
+                        android:id="@+id/tv_community_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="微风科技"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"/>
+                    <!--是否认证-->
+                    <ImageView
+                        android:id="@+id/iv_has_already_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/icon_finish_register"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"/>
+                    <!--加入社区的天数-->
+                    <TextView
+                        android:id="@+id/tv_join_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:text="来xxxx已经108天了"/>
+
+                </LinearLayout>
+                <!--查询按钮-->
+                <ImageView
+                    android:id="@+id/iv_search_community"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/search"
+                    android:layout_gravity="bottom"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <!--我创建的-->
+                <LinearLayout
+                    android:id="@+id/my_community_root"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@color/community_tab_unSelect">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/icon_mine_community_select"
+                        android:layout_marginRight="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF7E6C"
+                        android:text="我创建的"/>
+                </LinearLayout>
+
+                <!--我加入的-->
+                <LinearLayout
+                    android:id="@+id/my_join_root"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="@color/community_tab_unSelect">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/icon_join_community_unselect"
+                        android:layout_marginRight="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF7E6C"
+                        android:text="我加入的"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--我创建的布局-->
+            <GridView
+                android:id="@+id/gridView_i_create"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:numColumns="2"
+                android:verticalSpacing="5dp"
+                android:horizontalSpacing="5dp"/>
+            <!--我加入的布局-->
+            <GridView
+                android:id="@+id/gridView_i_join"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:numColumns="2"
+                android:verticalSpacing="5dp"
+                android:horizontalSpacing="5dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F7F4F4"/>
+
+            <!--热门社区列表-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:text="热门社区"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycle_view_community"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never" />
+            </LinearLayout>
+
+            <View style="@style/divider_horizontal"
+                android:background="@color/community_filtrate_tab"
+                android:layout_height="1dp"/>
+            <!--筛选条件-->
+            <include layout="@layout/layout_filtrate_tab"/>
+            <!--社区分类列表-->
+            <ListView
+                android:id="@+id/listView_community"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dividerHeight="5dp"/>
+        </LinearLayout>
+    </weifen.com.widget.GradualScrollView>
+</LinearLayout>

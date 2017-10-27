@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--所有大类数据-->
+    <string-array name="big_type">
+        <item>家政</item>
+        <item>出游</item>
+        <item>维修</item>
+        <item>其他</item>
+    </string-array>
+
+    <!--大类对应编码-->
+    <integer-array name="big_type_id">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </integer-array>
+
+    <!--家政数据-->
+    <string-array name="clean">
+        <item>家教</item>
+        <item>保洁</item>
+        <item>陪护</item>
+        <item>月嫂</item>
+        <item>洗护</item>
+    </string-array>
+
+    <!--家政对应数据的编码-->
+    <integer-array name="clean_small_id">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </integer-array>
+
+    <!--上门维修数据-->
+    <string-array name="maintain">
+        <item>房屋维修</item>
+        <item>家电维修</item>
+        <item>家具维修</item>
+        <item>管道疏通</item>
+        <item>数码维修</item>
+        <item>手机维修</item>
+        <item>保洁清理</item>
+        <item>锁具更换清理</item>
+        <item>其他</item>
+    </string-array>
+
+    <!--上门维修对应数据的编码-->
+    <integer-array name="maintain_small_id">
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+    </integer-array>
+</resources>

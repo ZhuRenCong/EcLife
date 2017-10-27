@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#FF03A9F4</color>
+    <color name="primary_dark">#FF0288D1</color>
+    <color name="status_bar_color">@color/primary_dark</color>
+
+    <color name="divider">#DADADA</color>
+    <color name="divider_shallow">#D8D8D8</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="grey">#E6E6FA</color>
+    <color name="red">#ff0000</color>
+
+    <color name="line">#d8d8d8</color>
+
+    <color name="honeydew">#F0FFF0</color>
+    <color name="lightCoral">#F08080</color>
+    <color name="indianRed">#CD5C5C</color>
+
+
+    <!--layout_fragment_near-->
+    <color name="tab_line">#AE452E</color>
+    <color name="tab_background">#FFF9F9</color>
+    <color name="tab_text">#AE452E</color>
+
+
+    <!--layout_fragment_community-->
+    <color name="community_tab_select">#ffffff</color>
+    <color name="community_tab_unSelect">#FFF9F9</color>
+
+    <color name="community_filtrate_tab">#FFF6F5</color>
+    <color name="grey_light">#bfbfbf</color>
+    <color name="gray_popup_window">#99bfbfbf</color>
+</resources>

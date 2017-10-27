@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootview">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="bottom"
+                android:src="@mipmap/black_back"
+                android:padding="7dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:text="发布"
+                android:textColor="@color/black"
+                android:layout_gravity="bottom"
+                android:textSize="18sp"
+                android:gravity="center"/>
+
+            <ImageView
+                android:id="@+id/draft_box"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="bottom"
+                android:src="@mipmap/draft_box"
+                android:layout_marginRight="5dp"
+                android:padding="10dp"/>
+
+        </LinearLayout>
+
+        <View style="@style/divider_horizontal"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_cover"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/icon_cover"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="标题"
+                        android:textSize="15sp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="25dp"/>
+
+                    <EditText
+                        android:id="@+id/title"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:paddingLeft="5dp"
+                        android:background="@null"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/label"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/honeydew"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:padding="3dp"
+                            android:layout_marginLeft="55dp"
+                            android:src="@mipmap/add"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="标签"
+                            android:textSize="16sp"
+                            android:textColor="#FFE4C4"
+                            android:paddingLeft="7dp"
+                            android:gravity="center|left"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/address"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="55dp"
+                            android:padding="3dp"
+                            android:src="@mipmap/big_address"
+                            android:layout_gravity="center"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="地址"
+                            android:textColor="#d81e06"
+                            android:textSize="16sp"
+                            android:paddingLeft="7dp"
+                            android:gravity="center|left"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/address_is_visiable"
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:paddingLeft="25dp"
+                                android:textColor="@color/black"
+                                android:gravity="center_vertical"
+                                android:textSize="16sp"
+                                android:text="当前:"/>
+
+                            <TextView
+                                android:id="@+id/location_address"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="广东工业大学华立学院"
+                                android:gravity="center_vertical"
+                                android:textSize="16sp"
+                                android:textColor="@color/black"
+                                android:paddingLeft="5dp"/>
+
+                            <ImageView
+                                android:id="@+id/relocation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="15dp"
+                                android:src="@mipmap/reload"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/user_define"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:text="自定义"
+                            android:textSize="16sp"
+                            android:paddingLeft="25dp"
+                            android:gravity="center_vertical"/>
+                    </LinearLayout>
+
+                    <weifen.com.common.utils.FlowLayout
+                        android:id="@+id/flowlayout"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"/>
+
+                </FrameLayout>
+
+                <View style="@style/divider_horizontal_shallow"/>
+
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@null"
+                    android:hint="发布的详细描述"
+                    android:maxLines="3"
+                    android:textSize="14sp"
+                    android:padding="16dp"
+                    android:gravity="top"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/shopping_image"
+                        android:layout_width="100dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/popular_community_02"
+                        android:layout_marginRight="20dp"/>
+
+                    <ImageView
+                        android:id="@+id/image_button"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:padding="35dp"
+                        android:background="#FFF0F5"
+                        android:src="@mipmap/add_piture"/>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"/>
+
+                <View style="@style/divider_horizontal_shallow"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"/>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/popular_community_04"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/contact_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:textSize="14sp"
+                            android:paddingLeft="25dp"
+                            android:hint="联系人姓名"/>
+
+                        <View style="@style/divider_horizontal_shallow"/>
+
+                        <EditText
+                            android:id="@+id/shop_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="25dp"
+                            android:background="@null"
+                            android:textSize="14sp"
+                            android:hint="手机号"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="#FFFFF0"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"/>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="25dp"
+                        android:src="@mipmap/dollar"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="价格"
+                        android:textSize="18sp"
+                        android:gravity="center"/>
+
+                    <EditText
+                        android:id="@+id/price"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="14sp"
+                        android:text="78"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"/>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/publish"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:text="发布"
+        android:gravity="center"
+        android:background="@drawable/publish_button"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="25dp"
+        android:layout_centerInParent="true" />
+</RelativeLayout>

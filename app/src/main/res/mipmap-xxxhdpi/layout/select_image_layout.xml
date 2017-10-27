@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#66000000">
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/album"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="从相册选择图片"
+            android:background="#ffffff"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <View style="@style/divider_horizontal"/>
+
+        <TextView
+            android:id="@+id/camera"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="拍照"
+            android:background="#ffffff"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <View style="@style/divider_horizontal"/>
+
+        <View style="@style/divider_horizontal"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="取消"
+            android:background="#ffffff"
+            android:textSize="20sp"
+            android:gravity="center"/>
+    </LinearLayout>
+
+</RelativeLayout>

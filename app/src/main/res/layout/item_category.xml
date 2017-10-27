@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <!--分类图片-->
+    <ImageView
+        android:id="@+id/category_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/category_list_02" />
+    <!--分类的标题-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/category_icon"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_category_small_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_ring_text"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingTop="1dp"
+            android:paddingBottom="1dp"
+            android:text="家教"
+            android:textColor="#D85434" />
+
+        <TextView
+            android:id="@+id/tv_category_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:lines="1"
+            android:ellipsize="end"
+            android:padding="3dp"
+            android:text="高中英语教学" />
+    </LinearLayout>
+
+    <!--发布的时间和位置-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/category_icon"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_category_update_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/time_logo"
+            android:drawablePadding="5dp"
+            android:padding="3dp"
+            android:text="2017.08.12" />
+
+        <TextView
+            android:id="@+id/tv_category_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:drawableLeft="@mipmap/address_logo"
+            android:drawablePadding="3dp"
+            android:lines="1"
+            android:ellipsize="end"
+            android:text="广州" />
+    </LinearLayout>
+    <!--价格-->
+    <TextView
+        android:id="@+id/tv_category_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/category_icon"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/category_icon"
+        android:text="￥200.00"
+        android:textColor="#D85434"
+        android:textSize="16sp" />
+</RelativeLayout>

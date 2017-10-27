@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/all_sort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:gravity="center"
+            android:text="综合排序"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/price_sort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="价格排序"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/comment_sort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="评价由高到低排序"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/sale_sort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="销量"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/distance_sort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="距离"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/left"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray_popup_window" />
+
+</LinearLayout>

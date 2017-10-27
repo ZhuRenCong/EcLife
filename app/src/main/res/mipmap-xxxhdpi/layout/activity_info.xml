@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root">
+
+
+    <LinearLayout
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            android:src="@mipmap/black_back"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="个人资料"
+            android:textColor="#000"
+            android:textSize="18sp"/>
+    </LinearLayout>
+    <View style="@style/divider_horizontal"/>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="18dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/person_iocn" />
+
+    <!--昵称-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:padding="25dp">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="昵称"
+            android:textColor="#929292"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/nick_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="家教男神"
+            android:background="@android:color/transparent"
+            android:textCursorDrawable="@drawable/shape_cursor_login"
+            android:textColor="#929292"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <View style="@style/divider_horizontal"/>
+    <!--联系手机-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:padding="25dp">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="联系手机"
+            android:textColor="#929292"
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:textCursorDrawable="@drawable/shape_cursor_login"
+            android:textColor="#929292"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <View style="@style/divider_horizontal"/>
+
+    <!--联系QQ-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:padding="25dp">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="联系QQ"
+            android:textColor="#929292"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/qq"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="979672017"
+            android:background="@android:color/transparent"
+            android:textCursorDrawable="@drawable/shape_cursor_login"
+            android:textColor="#929292"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <View style="@style/divider_horizontal"/>
+    <!--联系QQ-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:padding="25dp">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="个人签名"
+            android:textColor="#929292"
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/signature"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="3"
+            android:background="@android:color/transparent"
+            android:textCursorDrawable="@drawable/shape_cursor_login"
+            android:text="授人以渔,不如授之以渔,对于每一个学生都要保有希望ffffff"
+            android:textColor="#929292"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="45dp"
+        android:textSize="20sp"
+        android:textColor="#F3B7A4"
+        android:text="保存"
+        android:background="@drawable/shape_ring_text"/>
+</LinearLayout>
