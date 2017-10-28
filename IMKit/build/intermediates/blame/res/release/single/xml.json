@@ -1,5 +1,9 @@
 [
     {
+        "merged": "F:\\EcLife\\IMKit\\build\\intermediates\\res\\merged\\release\\xml\\rc_file_path.xml",
+        "source": "F:\\EcLife\\IMKit\\src\\main\\res\\xml\\rc_file_path.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\Desktop\\ec_life\\EcLife\\IMKit\\build\\intermediates\\res\\merged\\release\\xml\\rc_file_path.xml",
         "source": "C:\\Users\\Administrator\\Desktop\\ec_life\\EcLife\\IMKit\\src\\main\\res\\xml\\rc_file_path.xml"
     }

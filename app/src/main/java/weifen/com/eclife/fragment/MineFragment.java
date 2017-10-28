@@ -71,44 +71,12 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
 
         initListener();
 
-        getMyShopping();
-        //刷新商品
-        swipeRefresh.setColorSchemeResources(R.color.red);
-        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                getMyShopping();
-                swipeRefresh.setRefreshing(false);
-            }
-        });
-
-//        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
-//            @Override
-//            public void onScrollStateChanged(AbsListView absListView, int i) {
-//
-//            }
-//
-//            @Override
-//            public void onScroll(AbsListView absListView, int i, int i1, int i2) {
-//                if(i==0)
-//                    swipeRefresh.setRefreshing(true);
-//                else
-//                    swipeRefresh.setRefreshing(false);
-//            }
-//        });
-//
-//        scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
-//            @Override
-//            public void onScrollChanged() {
-//                swipeRefresh.setEnabled(scrollView.getScrollY()==0);
-//            }
-//        });
     }
 
     private void getMyShopping(){
-        if(!"".equals(SPUtil.getUserId("sessionId"))&& !"".equals(MyApplication.user.getTel())){
+        if(!"".equals(SPUtil.getUserId("sessionId"))&& !"".equals(MyApplication.user.getTel())&&MyApplication.user.getTel()!=null){
             HashMap<String,String> map=new HashMap<>();
-            map.put("tel","1234567890");
+            map.put("tel",MyApplication.user.getTel());
             RequestUtil.post("http://60.205.204.56/myproduct.php", map, null, false, new RequestUtil.MyCallBack() {
                 @Override
                 public void success(String param) {
@@ -134,7 +102,8 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                             @Override
                             public void convert(ViewHolder holder, ShoppingCom item) {
                                 holder.setImageByUrl(R.id.category_icon,URLUtil.URL_PATH+"/"+(item.getImage_url1()).substring(2));
-                                holder.setText(R.id.tv_category_small_type,smallType[Integer.parseInt(item.getSmall_id())]);
+                                //Integer.parseInt(item.getSmall_id())-6之所以减6，是因为id从6开始
+                                holder.setText(R.id.tv_category_small_type,smallType[Integer.parseInt(item.getSmall_id())-6]);
                                 holder.setText(R.id.tv_category_info,item.getTitle());
                                 holder.setText(R.id.tv_category_update_time,(item.getPublish_time()).split(" ")[0]);
                                 holder.setText(R.id.tv_category_distance,"广州");
@@ -142,6 +111,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                             }
                         };
                         listView.setAdapter(adapter);
+                        FixedViewUtil.resetListViewHeight(listView);
 
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
@@ -165,6 +135,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         }else {
             hasData.setVisibility(View.VISIBLE);
             listView.setVisibility(View.GONE);
+            gradeNumber.setText("0");
         }
     }
 
@@ -185,7 +156,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         backgroundImage= (ImageView) view.findViewById(R.id.iv_background_mine);
         hasData= (LinearLayout) view.findViewById(R.id.has_data);
         image= (CircleImageView) view.findViewById(R.id.head_image);
-        swipeRefresh= (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh);
+    //    swipeRefresh= (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh);
         scrollView= (ScrollView) view.findViewById(R.id.scroll_view_mine);
 
     }
@@ -196,6 +167,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         if(!"".equals(MyApplication.user.getTel()+"")){
             setUserInfo();
         }
+        getMyShopping();
     }
 
     private void initListener() {

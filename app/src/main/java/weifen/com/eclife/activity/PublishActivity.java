@@ -213,6 +213,21 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
      * 发布的方法
      * @param imagePath
      */
+
+    /**
+     * 商品发布
+     * @param bc 大类
+     * @param sc 小类
+     * @param name 名字
+     * @param title 标题
+     * @param publish_tel 发布的电话
+     * @param money 商品价格
+     * @param longitude 经度
+     * @param latitude 纬度大类
+    地址			POST名adress
+     * @param detail 详情
+     * @param imagePath 图片路径
+     */
     public void publishShoppingInfo(String imagePath){
 //        请求网页：http://60.205.204.56/release.php
         RequestResult.publishShopping(this,whichType,

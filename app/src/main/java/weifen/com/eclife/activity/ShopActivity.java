@@ -35,9 +35,9 @@ public class ShopActivity extends BaseActivity implements View.OnClickListener {
         Intent intent;
         switch (view.getId()){
             case R.id.chat:
-//                RongIM.getInstance().enableNewComingMessageIcon(true);//显示新消息提醒
-//                RongIM.getInstance().enableUnreadMessageIcon(true);//显示未读消息数目
-//                RongIM.getInstance().startPrivateChat(this,shopping.getTel(),shopping.getTitle());
+                RongIM.getInstance().enableNewComingMessageIcon(true);//显示新消息提醒
+                RongIM.getInstance().enableUnreadMessageIcon(true);//显示未读消息数目
+                RongIM.getInstance().startPrivateChat(this,shopping.getTel(),shopping.getTitle());
                 break;
         }
     }
