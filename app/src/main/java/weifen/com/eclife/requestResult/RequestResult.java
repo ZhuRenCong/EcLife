@@ -331,19 +331,15 @@ public class RequestResult {
         params.put("title",title);
         params.put("publish_tel",publish_tel);
         params.put("money",money);
-//        params.put("adress_e",String.valueOf(longitude));
-        params.put("adress_e","700");
-        params.put("adress_w","700");
-//        params.put("adress_w",String.valueOf(latitude));
+        params.put("adress_e",String.valueOf(longitude));
+        params.put("adress_w",String.valueOf(latitude));
         params.put("detail",detail);
         params.put("image",imagePath);
         params.put("adress",adress);
 
         params.put("request","300");//请求
         params.put("tel",BaseApplication.user.getTel());//TODO 用户电话
-        Log.e("userid",BaseApplication.user.getUserId());
-//        params.put("userid",BaseApplication.user.getUserId());//userid
-        params.put("userid","43");//userid
+        params.put("userid",BaseApplication.user.getUserId());//userid
 
         RequestUtil.post(URLUtil.PUBLISH_SHOPPING, params, null, false, new RequestUtil.MyCallBack() {
             @Override

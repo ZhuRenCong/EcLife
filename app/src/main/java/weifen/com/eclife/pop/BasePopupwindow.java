@@ -6,12 +6,14 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
+import weifen.com.eclife.R;
+
 /**
  * Created by Administrator on 2017/10/21.
  */
 public abstract class BasePopupwindow {
     Context context;
-    PopupWindow popupWindow;
+    public PopupWindow popupWindow;
     PopCallBack popCallBack;
     public BasePopupwindow(Context context, PopCallBack popCallBack){
         this.context=context;
@@ -20,11 +22,12 @@ public abstract class BasePopupwindow {
 
 
     public void init(){
-        popupWindow=new PopupWindow(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+        popupWindow=new PopupWindow(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
         popupWindow.setContentView(getPopView());
         popupWindow.setFocusable(true);
         popupWindow.setTouchable(true);
         popupWindow.setBackgroundDrawable(new BitmapDrawable());
+        popupWindow.setAnimationStyle(R.style.Animations_GrowFromBottom);
     }
 
     public void open(View parent,int gravity,int x,int y){
@@ -81,5 +84,6 @@ public abstract class BasePopupwindow {
 
     public interface PopCallBack{
         void setText(int type);//根据type显示排序的问题
+        void sureSelect(int type, String min, String max, String keyWord);//点击了确定
     }
 }

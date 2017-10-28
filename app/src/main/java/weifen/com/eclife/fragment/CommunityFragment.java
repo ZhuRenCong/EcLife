@@ -283,6 +283,11 @@ public class CommunityFragment extends BaseFragment implements View.OnClickListe
                     public void setText(int type) {
 
                     }
+
+                    @Override
+                    public void sureSelect(int type,String min,String max,String keyword) {//判断点击的是那个筛选
+
+                    }
                 });
                 sortPopupWindow.init();
                 int[] popupWindowLoc=sortPopupWindow.calculatePopupWindow(sortTV);

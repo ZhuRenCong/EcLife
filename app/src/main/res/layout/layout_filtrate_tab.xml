@@ -12,7 +12,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:drawableRight="@mipmap/back_down"
-        android:drawablePadding="-50dp"
+        android:drawablePadding="-40dp"
         android:padding="11dp"
         android:text="排序"
         android:background="@color/community_filtrate_tab"/>
@@ -32,7 +32,7 @@
         android:layout_weight="1"
         android:gravity="center"
         android:drawableRight="@mipmap/back_down"
-        android:drawablePadding="-50dp"
+        android:drawablePadding="-40dp"
         android:padding="10dp"
         android:text="筛选"
         android:background="@color/community_filtrate_tab"/>

@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 import com.squareup.picasso.Picasso;
 
 import java.math.BigDecimal;
@@ -61,9 +60,9 @@ public class MaintainAdapter extends BaseAdapter{
         }else if(itemDatas.get("distance") instanceof Integer){
             viewHolder.distanceTV.setText(itemDatas.get("distance")+"m");
         }
-        viewHolder.contentTV.setText(itemDatas.get("content")+"");
+        viewHolder.contentTV.setText(itemDatas.get("title")+"");
         viewHolder.updateTimeTV.setText(DateFormatUtils.parseDate(itemDatas.get("publish_time")+"","yyyy.MM.dd"));
-        viewHolder.priceTV.setText(itemDatas.get("money")+"");
+        viewHolder.priceTV.setText("￥"+itemDatas.get("money")+"");
 
 
 //                "image_url1": "[\"./Uploads/d24f06b733aab059b014e6d2e64d47a512.png",
@@ -80,7 +79,7 @@ public class MaintainAdapter extends BaseAdapter{
 //                "distance": 12651.780169921
         String imagePath=itemDatas.get("image_url1").toString();
         if(imagePath.startsWith("[\"./")){
-            imagePath=URLUtil.URL_PATH+imagePath.substring(imagePath.indexOf("/")).trim();
+            imagePath= URLUtil.URL_PATH+imagePath.substring(imagePath.indexOf("/")).trim();
         }
         Picasso.with(context).load(imagePath).error(R.mipmap.person_iocn).into(viewHolder.icon);
         if(chooseAddressCallBack!=null){

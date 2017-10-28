@@ -1,14 +1,14 @@
 package weifen.com.eclife.activity;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.widget.AdapterView;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +25,7 @@ import weifen.com.common.utils.FixedViewUtil;
 import weifen.com.eclife.R;
 import weifen.com.eclife.adapter.MaintainAdapter;
 import weifen.com.eclife.pop.BasePopupwindow;
+import weifen.com.eclife.pop.ScreenPopupWindow;
 import weifen.com.eclife.pop.SortPopupWindow;
 import weifen.com.eclife.requestResult.MaintainControl;
 
@@ -47,6 +48,8 @@ public class MaintainActivity extends BaseActivity implements View.OnClickListen
     int[] tabID;
     int smallId;//点击的小类id
     int currentSortType=1;//0-排序 1-全部 2-筛选
+    ScrollView scrollView;
+    LinearLayout maintainHeadRoot;
 
     //广告图片集合
     private List<ImageView> advImages;
@@ -87,6 +90,7 @@ public class MaintainActivity extends BaseActivity implements View.OnClickListen
 
         maintainConctrol=new MaintainControl(this);
         maintainConctrol.onLoadMaintainList(tabID[0]);//加载房屋维修数据
+
     }
 
     private void initTabLayout() {
@@ -110,6 +114,9 @@ public class MaintainActivity extends BaseActivity implements View.OnClickListen
         maintainTablayout= (TabLayout) findViewById(R.id.tab_layout_maintain);
         sortTabLayout= (LinearLayout) findViewById(R.id.sort_tab_layout);
         nullDataLayout= (LinearLayout) findViewById(R.id.has_data);
+
+        scrollView= (ScrollView) findViewById(R.id.maintain_scrollView);
+        maintainHeadRoot= (LinearLayout) findViewById(R.id.maintain_head_root);
     }
 
     private void initAdapter() {
@@ -127,13 +134,6 @@ public class MaintainActivity extends BaseActivity implements View.OnClickListen
             }
         });
         listView.setAdapter(maintainAdapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent=new Intent(MaintainActivity.this, ShopActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     private void initListener() {
@@ -154,6 +154,7 @@ public class MaintainActivity extends BaseActivity implements View.OnClickListen
                         sortTV.setBackgroundColor(getResources().getColor(R.color.community_tab_unSelect));
                         screeningTV.setBackgroundColor(getResources().getColor(R.color.community_tab_unSelect));
                         sortTV.setText("排序");
+                        screeningTV.setText("筛选");
                         currentSortType=1;
                     }
                     maintainConctrol.onLoadMaintainList(smallId);
@@ -192,6 +193,7 @@ public class MaintainActivity extends BaseActivity implements View.OnClickListen
                 SortPopupWindow sortPopupWindow=new SortPopupWindow(this,this);
                 sortPopupWindow.init();
                 sortPopupWindow.open(sortTV);
+                dealPopupWindowShower(sortPopupWindow);
                 break;
             //全部
             case R.id.tv_all_filtrate:
@@ -200,6 +202,7 @@ public class MaintainActivity extends BaseActivity implements View.OnClickListen
                 sortTV.setBackgroundColor(getResources().getColor(R.color.community_tab_unSelect));
                 screeningTV.setBackgroundColor(getResources().getColor(R.color.community_tab_unSelect));
                 sortTV.setText("排序");
+                screeningTV.setText("筛选");
                 //加载当前类的全部
                 maintainConctrol.onLoadMaintainList(smallId);
                 break;
@@ -209,9 +212,15 @@ public class MaintainActivity extends BaseActivity implements View.OnClickListen
                 screeningTV.setBackgroundColor(getResources().getColor(R.color.community_tab_select));
                 sortTV.setBackgroundColor(getResources().getColor(R.color.community_tab_unSelect));
                 allTV.setBackgroundColor(getResources().getColor(R.color.community_tab_unSelect));
+
+                ScreenPopupWindow screenPopupWindow=new ScreenPopupWindow(this,this);
+                screenPopupWindow.init();
+                screenPopupWindow.open(maintainHeadRoot);//显示在最上方
+                dealPopupWindowShower(screenPopupWindow);
                 break;
         }
     }
+
 
     @Override
     public void setText(int type) {//popupwindow的回调
@@ -237,8 +246,18 @@ public class MaintainActivity extends BaseActivity implements View.OnClickListen
                 sortTV.setText("距离");
                 maintainConctrol.onLoadSortMaintainList(smallId,"distance");
                 break;
+            case 6:
+                screeningTV.setText("价格");
+                break;
+            case 7:
+                screeningTV.setText("距离");
+                break;
+            case 8:
+                screeningTV.setText("关键字");
+                break;
         }
     }
+
 
     /**
      * 请求控制类的回调,加载列表数据
@@ -257,5 +276,28 @@ public class MaintainActivity extends BaseActivity implements View.OnClickListen
         }
         FixedViewUtil.resetListViewHeight(listView);
         maintainAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void sureSelect(int type,String min,String max,String keyword) {//点击确定,这边不会用到
+        maintainConctrol.onLoadScreenMaintainList(3,smallId,type,min,max,keyword);
+    }
+
+    /**
+     * 处理pop的其他部分的阴影效果
+     * @param pop
+     */
+    private void dealPopupWindowShower(BasePopupwindow pop) {
+        WindowManager.LayoutParams lp=getWindow().getAttributes();
+        lp.alpha=0.7f;
+        getWindow().setAttributes(lp);
+        pop.popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                WindowManager.LayoutParams lp=getWindow().getAttributes();
+                lp.alpha=1f;
+                getWindow().setAttributes(lp);
+            }
+        });
     }
 }

@@ -52,4 +52,16 @@
         <item name="android:maxHeight">17dip</item>
     </style>
 
+    <!--layout_pop_screen-->
+    <style name="PopSortItemText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:background">@drawable/shape_screen_et</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
 </resources>

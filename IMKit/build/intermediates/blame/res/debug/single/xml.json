@@ -6,5 +6,9 @@
     {
         "merged": "C:\\Users\\Administrator\\Desktop\\ec_life\\EcLife\\IMKit\\build\\intermediates\\res\\merged\\debug\\xml\\rc_file_path.xml",
         "source": "C:\\Users\\Administrator\\Desktop\\ec_life\\EcLife\\IMKit\\src\\main\\res\\xml\\rc_file_path.xml"
+    },
+    {
+        "merged": "F:\\work\\android\\EcLife\\IMKit\\build\\intermediates\\res\\merged\\debug\\xml\\rc_file_path.xml",
+        "source": "F:\\work\\android\\EcLife\\IMKit\\src\\main\\res\\xml\\rc_file_path.xml"
     }
 ]

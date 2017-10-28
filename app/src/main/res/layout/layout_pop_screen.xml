@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:padding="15dp"
+            android:text="取消" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="筛选" />
+
+        <TextView
+            android:id="@+id/tv_sure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="15dp"
+            android:text="确定" />
+    </RelativeLayout>
+
+    <View style="@style/horizontal_light_thin_divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!--筛选的条件-->
+        <include
+            layout="@layout/item_popup_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
+            <!--价格|距离-->
+            <LinearLayout
+                android:id="@+id/price_screen_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/et_min"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_screen_et"
+                        android:hint="min"
+                        android:padding="5dp"
+                        android:textSize="12sp" />
+
+                    <View
+                        style="@style/horizontal_light_thin_divider"
+                        android:layout_width="20dp"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="2dp" />
+
+                    <EditText
+                        android:id="@+id/et_max"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_screen_et"
+                        android:hint="max"
+                        android:padding="5dp"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <!--3个可选价格的筛选-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+                        <TextView
+                            style="@style/PopSortItemText"
+                            android:text="40-135"/>
+                        <TextView
+                            style="@style/PopSortItemText"
+                            android:text="135-300"/>
+                        <TextView
+                            style="@style/PopSortItemText"
+                            android:text="135-300"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--关键字-->
+            <LinearLayout
+                android:id="@+id/keyword_root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:padding="16dp">
+
+                <EditText
+                    android:id="@+id/et_keyword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_screen_et"
+                    android:hint="请输入关键字"
+                    android:padding="8dp"
+                    android:textSize="12sp" />
+
+                <!--3个可选价格的筛选-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        style="@style/PopSortItemText"
+                        android:text="房屋维修" />
+                    <TextView
+                        style="@style/PopSortItemText"
+                        android:text="数码维修" />
+                    <TextView
+                        style="@style/PopSortItemText"
+                        android:text="其他" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

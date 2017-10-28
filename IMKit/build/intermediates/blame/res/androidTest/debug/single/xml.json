@@ -4,6 +4,10 @@
         "source": "F:\\EcLife\\IMKit\\build\\intermediates\\bundles\\debug\\res\\xml\\rc_file_path.xml"
     },
     {
+        "merged": "F:\\work\\android\\EcLife\\IMKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\xml\\rc_file_path.xml",
+        "source": "F:\\work\\android\\EcLife\\IMKit\\build\\intermediates\\bundles\\debug\\res\\xml\\rc_file_path.xml"
+    },
+    {
         "merged": "C:\\Users\\Administrator\\Desktop\\ec_life\\EcLife\\IMKit\\build\\intermediates\\res\\merged\\androidTest\\debug\\xml\\rc_file_path.xml",
         "source": "C:\\Users\\Administrator\\Desktop\\ec_life\\EcLife\\IMKit\\build\\intermediates\\bundles\\debug\\res\\xml\\rc_file_path.xml"
     }
